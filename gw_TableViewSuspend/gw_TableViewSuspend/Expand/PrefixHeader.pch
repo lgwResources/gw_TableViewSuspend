@@ -1,0 +1,47 @@
+//
+//  PrefixHeader.pch
+//  gw_TableViewSuspend
+//
+//  Created by 刘功武 on 2019/5/5.
+//  Copyright © 2019年 刘功武. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIView+frame.h"
+#import "NSString+Extension.h"
+
+/**状态栏高度*/
+#define stateBarHeight  ([UIApplication sharedApplication].statusBarFrame.size.height)
+/**导航栏高度*/
+#define startBarHeight  (stateBarHeight+44)
+/**下方工具栏高*/
+#define toolsBarHeight (iPhoneX==YES ? 83.0 : 49.0)
+
+#define _bottomM (iPhoneX==YES ? 34.0 : 0.0)
+
+/**iPhoneX*/
+#define iPhoneX ((screenHeight == 812.0f) ? YES : NO)
+
+#define screenHeight    ([UIScreen mainScreen].bounds.size.height)
+#define screenWidth     ([UIScreen mainScreen].bounds.size.width)
+
+#define sliderHeight 40
+
+/** weakSelf */
+#define GW_WEAKSELF typeof(self) __weak weakSelf = self
+
+/**色彩设置*/
+#define UIColorFromRGBA(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:((float)((rgbValue & 0xFF000000) >> 24))/255.0]
+#define UIColorFromRGB(r,g,b) [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1]
+
+/**随机颜色*/
+#define RANDOMCOLOR() UIColorFromRGB(rand()%256, rand()%256, rand()%256)
+
+#define CUSTOMEBFONT(A)         [UIFont fontWithName:@"PingFangSC-Medium" size:(A)]
+#define CUSTOMEFONT(A)          [UIFont fontWithName:@"PingFangSC-Regular" size:(A)]
+#define SemiboldFont(A)         [UIFont fontWithName:@"PingFangSC-Semibold" size:(A)]
+#define CUSTOMEENGLISHFONT(A)   [UIFont fontWithName:@"ArialMT" size:A]
+
+#endif /* PrefixHeader_pch */
