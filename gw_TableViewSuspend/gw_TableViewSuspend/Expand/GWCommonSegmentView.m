@@ -236,6 +236,11 @@
                 btn.titleLabel.font = CUSTOMEFONT(16);
             }
         }];
+        if (self.currentSegmentBtn.right > screenWidth) {
+            self.segmentScrollView.contentOffset = CGPointMake(self.currentSegmentBtn.right - screenWidth, 0);
+        }else {
+            self.segmentScrollView.contentOffset = CGPointMake(0, 0);
+        }
     }
 }
 @end
